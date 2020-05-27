@@ -1,11 +1,7 @@
-const express = require("express")
-const cors = require("cors")
+/* by convention, this file contains all the logic for 
+   serving up the application */
 
-const app = express()
-
-app.get("/", (request, response) => {
-  response.json({ message: "Hi!" })
-})
+const app = require('./app')
 
 const PORT = process.env.PORT || 4000
 app.listen(PORT, () => console.log("Currently listening on port", PORT))
