@@ -79,3 +79,4 @@ What does this mean?
 
 This means that in the example above, the `router.get("/about"...)` is actually handling requests from `"/example/about"` because in the main application, we stated that the root for that router was `example`. 
 
+> Special note: It is possible to have routers within routers
