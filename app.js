@@ -41,10 +41,14 @@ const deleteDogController = (request, response) => {
     dogs = dogs.filter(dog => dog.id != request.params.id); 
 }
 
-app.get("/", indexController)
-app.get("/dogs", listDogsController)
-app.get("/dogs/:id", getDogController)
-app.post("/dogs", createDogController) 
-app.delete("/dogs/:id", deleteDogController)
+/* Using routers - 
+    since we created an express router for "dogs", we can say that 
+    anything destined for "/dogs*" should be handled by the dogs router 
+
+    This allows also us to remove the "dogs" prefix from all of the routes 
+    in that router. 
+*/
+const dogsRouter = require("./controllers/dogs") // importing the router 
+app.use("/dogs", dogsRouter); // using the router 
 
 module.exports { app } 
