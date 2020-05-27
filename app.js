@@ -4,6 +4,7 @@ const express = require("express")
 const cors = require("cors")
 
 const app = express()
+app.get("/", indexController)
 
 const indexController = (request, response) => {
     response.json({ message: "Hi!" })

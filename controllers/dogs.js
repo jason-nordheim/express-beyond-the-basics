@@ -2,10 +2,9 @@ const express = require('express');
 const router = express.Router(); 
 
 
-router.get("/", indexController)
-router.get("/dogs", listDogsController)
-router.get("/dogs/:id", getDogController)
-router.post("/dogs", createDogController) 
-router.delete("/dogs/:id", deleteDogController)
+router.get("/", listDogsController)
+router.get("/:id", getDogController)
+router.post("/", createDogController) 
+router.delete("/:id", deleteDogController)
 
 module.exports = {router} 
